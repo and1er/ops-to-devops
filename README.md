@@ -5,6 +5,8 @@ My personal notes for Ops colleagues with tasks to do to dive into DevOps work.
 * **practical cases to learn new tools by doing**;
 * orienteers _where to go_, but you are free with _how to go_.
 
+[![GitHub Super-Linter](https://github.com/and1er/ops-to-devops/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
 ## Contribution
 
 Please, feel free to

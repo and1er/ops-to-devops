@@ -121,7 +121,8 @@ It's OK to do everything manually in a dirty way: make it work first.
 3. Install Docker locally. On macOS or Windows Docker Desktop is the simplest solution and it's still free for individual engineers, but there are a lot of `run docker without docker desktop` free solutions.
 4. Build the Docker image locally.
 5. Run the image locally and map the port from a container to host to see the application in your web browser on `localhost:8080`.
-6. Tag and push the image to Docker Hub.
+6. Perform `docker login` to Docker Hub.
+7. Tag and push the image to Docker Hub.
 
 ### Use Docker image
 
@@ -132,3 +133,51 @@ Here it should be OK because AWS provides cloud firewall rules.
 2. Install Docker (no any problems on Linux).
 3. Run a container on `localhost:7001` (shoud differ from the port used by systemd app instance).
 4. Reconfigure NGINX to serve the app from a Docker container.
+
+## Setup CI `PYTHON_APP` with GitHub Actions
+
+On push to any branch excepting `main` OR every pull request to `main` branch run following CI actions
+
+* [GitHub SuperLinter](https://github.com/github/super-linter) — universal linter for many types of files. It helps to find out a lot of interesting details.
+* Specific Python code linter (e.g. try `flake8`, configure it committing `.flake8` file into the repository).
+
+    Here also recommended to split **requirements.txt** into a group of files
+
+    ```bash
+    requirements
+    ├── base.txt  # common packages
+    ├── dev.txt  # packages for development like linters that don't needed on production
+    └── production.txt  # packages for production including app web server
+    ```
+
+    e.g.
+
+    ```bash
+    # base.txt
+    flask==1.1.2
+
+    # dev.txt
+    -r base.txt
+
+    flake8==3.8.4
+    mccabe==0.6.1
+    pycodestyle==2.6.0
+    pyflakes==2.2.0
+
+    # production.txt
+    -r base.txt
+    gunicorn==20.0.4
+    ```
+
+* If linters are passed, push the image to Docker Hub.
+  * **Docker Hub credentials must be passed via repository secrets!!!**
+  * Put `latest` tag if the branch is `main`, or `dev` tag otherwise.
+
+## Future steps
+
+* Terraform: create a new EC2 instance from code.
+* Ansible: provision the instance after Terraform to make it run the application.
+  * Run Ansible from local WS firstly;
+  * Then make it as CD step in GitHub actions providing SSH access from a temporary GitHub Actions VM (via secrets), see [example](https://github.com/and1er/pet-java-api/blob/main/.github/workflows/release.yml).
+* CD: In a GitHub actions replace EC2 instance with Terraform then tune the host with Ansible [example](https://github.com/and1er/pet-java-api/blob/main/.github/workflows/release.yml).
+* To be continued...

@@ -91,13 +91,13 @@ Key points and actions:
 9. Create and assign Elastic IPv4 address to the instance (this is static external IP address).
 10. Create a DNS record for your domain pointing to the instance.
 
-## `PYTHON_APP`: manual deploy to Internet
+## `PYTHON_APP`: manual deploy to internet
 
 It's OK to do everything manually in a dirty way: make it work first.
 
 1. Connect to the instance via SSH using domain name as a host.
 2. Setup there your `PYTHON_APP` as you did it locally: git clone (by HTTPS wihtout auth if project is public), venv setup.
-3. Run manually using built-in Flask web server (as you did it locally) with `0.0.0.0` host and `80` port and enjoy your app available over global Internet! Then stop it.
+3. Run manually using built-in Flask web server (as you did it locally) with `0.0.0.0` host and `80` port and enjoy your app available over global internet! Then stop it.
 4. Run the project as systemd service using **gunicorn** or **uWSGI** web application server on `localhost:7000`.
 5. Install NGINX and configure it to
    * listen ports `80` and `443`;
@@ -106,7 +106,7 @@ It's OK to do everything manually in a dirty way: make it work first.
 7. Configure NGINX to
    * use TLS certificate on `443` port;
    * redirect `80 --> 443` port;
-8. Enjoy your application available over HTTPS in Internet!
+8. Enjoy your application available over HTTPS in internet!
 
 ## Dockerize `PYTHON_APP`
 
@@ -125,7 +125,7 @@ It's OK to do everything manually in a dirty way: make it work first.
 
 ### Use Docker image
 
-Be noted that Docker uses iptables firewall for own routing and you should be caution with firewall setup if you install and run Docker on hosts in Internet.
+Be noted that Docker uses iptables firewall for own routing and you should be caution with firewall setup if you install and run Docker on hosts in internet.
 Here it should be OK because AWS provides cloud firewall rules.
 
 1. SSH to your host.

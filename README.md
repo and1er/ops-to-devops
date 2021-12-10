@@ -19,8 +19,8 @@ Ensure you
 1. are self-education ready;
 2. don't afraid to make something work even in a simple/dirty way before making it better;
 3. know what's burnout at work (please, avoid this!), if you know Russian, see [this](https://youtu.be/TeSOcYzwx9A) and [this](https://youtu.be/fppiS0gUX7A) videos from our IT colleagues about this;
-4. have Linux/Unix environment to work (any Linux, MacOS, Windows with WSL or Linux VM onboard), [here's my Linux WS setup example|https://github.com/and1er/linux-ws];
-5. have an IDE (I recommend [VSCode|https://code.visualstudio.com/] with a lot of free plugins and Remote-SSH workspace feature);
+4. have Linux/Unix environment to work (any Linux, MacOS, Windows with WSL or Linux VM onboard), [here's my Linux WS setup example](https://github.com/and1er/linux-ws);
+5. have an IDE (I recommend [VSCode](https://code.visualstudio.com/) with a lot of free plugins and Remote-SSH workspace feature);
 6. saw the [DevOps Roadmap](https://roadmap.sh/devops) to know approximate path.
 
 ## Sign up for GitHub.com
@@ -45,4 +45,8 @@ English language is very important for work. But English study is also a long wa
 ## Develop simple `PYTHON_APP`
 
 Flask, API.
+
+### Acceptance criteria for `PYTHON_APP`
+
+
 

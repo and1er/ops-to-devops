@@ -22,7 +22,7 @@ Ensure you
 1. are self-education ready;
 2. don't afraid to make something work even in a simple/dirty way before making it better;
 3. know what's burnout at work (please, avoid this!), if you know Russian, see [this](https://youtu.be/TeSOcYzwx9A) and [this](https://youtu.be/fppiS0gUX7A) videos from our IT colleagues about this;
-4. have Linux/Unix environment to work (any Linux, MacOS, Windows with WSL or Linux VM onboard), [here's my Linux WS setup example](https://github.com/and1er/linux-ws);
+4. have Linux/Unix environment to work (any Linux, macOS, Windows with WSL or Linux VM onboard), [here's my Linux WS setup example](https://github.com/and1er/linux-ws);
 5. have an IDE (I recommend [VSCode](https://code.visualstudio.com/) with a lot of free plugins and Remote-SSH workspace feature);
 6. saw the [DevOps Roadmap](https://roadmap.sh/devops) to know approximate path.
 
@@ -118,7 +118,7 @@ It's OK to do everything manually in a dirty way: make it work first.
    * copy pip requirements file from the project into the image and install them;
    * copy source code;
    * run application web server as daemon on container start (read what the difference between `CMD` and `ENTRYPOINT` instructions);
-3. Install Docker locally. On MacOS or Windows Docker Desktop is the simplest solution and it's still free for individual engineers, but there are a lot of `run docker without docker desktop` free solutions.
+3. Install Docker locally. On macOS or Windows Docker Desktop is the simplest solution and it's still free for individual engineers, but there are a lot of `run docker without docker desktop` free solutions.
 4. Build the Docker image locally.
 5. Run the image locally and map the port from a container to host to see the application in your web browser on `localhost:8080`.
 6. Tag and push the image to Docker Hub.

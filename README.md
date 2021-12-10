@@ -35,8 +35,7 @@ Checklist.
 4. (optional) I generated and added to the account my _GPG key_ for commit signing to have _Verified_ badge for my commits to guarantee I'm an author of my commits (Git allows to set arbitrary `user.name` and `user.email` properties).
 5. I set [email settings](https://github.com/settings/emails) to keep my email private in commits
     * `Keep my email addresses private`
-    * `Block command line pushes that expose my email` 
-
+    * `Block command line pushes that expose my email`
 
 ## English checklist
 
@@ -52,6 +51,3 @@ English language is very important for work. But English study is also a long wa
 Flask, API.
 
 ### Acceptance criteria for `PYTHON_APP`
-
-
-

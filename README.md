@@ -29,8 +29,11 @@ Checklist.
 
 1. I have personal GitHub.com account.
 2. I setup 2FA for my account.
-3. I generated and added to the account my _SSH key_ for repository authentication.
-4. (optional) I generated and added to the account my _GPG key_ for commit signing to have _Verified_ badge for my commits.
+3. I generated and added to the account my _SSH key_ for repository authentication (for pull & push).
+4. (optional) I generated and added to the account my _GPG key_ for commit signing to have _Verified_ badge for my commits to guarantee I'm an author of my commits (Git allows to set arbitrary `user.name` and `user.email` properties).
+5. I set [email settings](https://github.com/settings/emails) to keep my email private in commits
+    * `Keep my email addresses private`
+    * `Block command line pushes that expose my email` 
 
 
 ## English checklist

@@ -107,3 +107,28 @@ It's OK to do everything manually in a dirty way: make it work first.
    * use TLS certificate on `443` port;
    * redirect `80 --> 443` port;
 8. Enjoy your application available over HTTPS in Internet!
+
+## Dockerize `PYTHON_APP`
+
+### Create Docker image
+
+1. Sign up for [Docker Hub](https://hub.docker.com/) — public images are free.
+2. Create a `Dockerfile` in the repository, it should
+   * start from a Python 3 docker image;
+   * copy pip requirements file from the project into the image and install them;
+   * copy source code;
+   * run application web server as daemon on container start (read what the difference between `CMD` and `ENTRYPOINT` instructions);
+3. Install Docker locally. On MacOS or Windows Docker Desktop is the simplest solution and it's still free for individual engineers, but there are a lot of `run docker without docker desktop` free solutions.
+4. Build the Docker image locally.
+5. Run the image locally and map the port from a container to host to see the application in your web browser on `localhost:8080`.
+6. Tag and push the image to Docker Hub.
+
+### Use Docker image
+
+Be noted that Docker uses iptables firewall for own routing and you should be caution with firewall setup if you install and run Docker on hosts in Internet.
+Here it should be OK because AWS provides cloud firewall rules.
+
+1. SSH to your host.
+2. Install Docker (no any problems on Linux).
+3. Run a container on `localhost:7001` (shoud differ from the port used by systemd app instance).
+4. Reconfigure NGINX to serve the app from a Docker container.
